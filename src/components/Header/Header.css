@@ -17,3 +17,10 @@
 .header a:hover{
     color: orange;
 }
+.text-color{
+    color: white;
+    margin-left: 10px;
+}
+.logOut{
+    margin-left: 10px;
+}

@@ -3,7 +3,9 @@ import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fa
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCreditCardAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Shop = () => {
     const products = useLoaderData();
@@ -57,7 +59,14 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart clearCart={clearCart} cart={cart}></Cart>
+                <Cart clearCart={clearCart} cart={cart}>
+                <Link to='/orders'>
+                    <button className='btn-orders'>
+                        <p>Preview Orders</p>
+                        <FontAwesomeIcon icon={faCreditCardAlt}></FontAwesomeIcon>
+                    </button>
+                </Link>
+                </Cart>
             </div>
         </div>
     );
